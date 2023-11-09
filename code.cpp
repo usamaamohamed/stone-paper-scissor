@@ -40,23 +40,10 @@ int  start_round(int& player_choice, int round_number)
 
 enum en_game { stone = 1, paper = 2, scissor = 3 };
 
-string convert_player_choose(int player_choice)
+string convert_choose(int choice)
 {
 
-    switch (player_choice)
-    {
-    case en_game::stone:
-        return "STONE";
-    case en_game::paper:
-        return "PAPER";
-    case en_game::scissor:
-        return "SCISSOR";
-    }
-}
-
-string convert_cmputer_choose(int cmputer_choice)
-{
-    switch (cmputer_choice)
+    switch (choice)
     {
     case en_game::stone:
         return "STONE";
@@ -72,8 +59,8 @@ void round_result(int player_choice, int computer_choice)
     cout << endl;
     if (player_choice == computer_choice)
     {
-        cout << "       YOUR CHOICE IS " << convert_player_choose(player_choice) << "\n";
-        cout << "       COMPUTER CHOICE IS " << convert_cmputer_choose(computer_choice) << "\n";
+        cout << "       YOUR CHOICE IS " << convert_choose(player_choice) << "\n";
+        cout << "       COMPUTER CHOICE IS " << convert_choose(computer_choice) << "\n";
         cout << "       Result is DRAW\n";
         //system("color 1F"); //turn screen to yellow
         cout << "\a"; //make alert sound
@@ -82,8 +69,8 @@ void round_result(int player_choice, int computer_choice)
               (( player_choice == en_game::stone)   &&  (computer_choice == en_game::scissor )) ||
               (( player_choice == en_game::scissor) &&  (computer_choice == en_game::paper   )) )
     {
-        cout << "       YOUR CHOICE IS " << convert_player_choose(player_choice) << "\n";
-        cout << "       COMPUTER CHOICE IS " << convert_cmputer_choose(computer_choice) << "\n";
+        cout << "       YOUR CHOICE IS " << convert_choose(player_choice) << "\n";
+        cout << "       COMPUTER CHOICE IS " << convert_choose(computer_choice) << "\n";
         cout << "       YOU WIN \n";
         //system("color 2F"); //turn screen to green
         cout << "\a"; //make alert sound
@@ -92,8 +79,8 @@ void round_result(int player_choice, int computer_choice)
               ((computer_choice == en_game::stone)   &&  (player_choice == en_game::scissor )) ||
               ((computer_choice == en_game::scissor) &&  (player_choice == en_game::paper   )) )
     {
-        cout << "       YOUR CHOICE IS " << convert_player_choose(player_choice) << "\n";
-        cout << "       COMPUTER CHOICE IS " << convert_cmputer_choose(computer_choice) << "\n";
+        cout << "       YOUR CHOICE IS " << convert_choose(player_choice) << "\n";
+        cout << "       COMPUTER CHOICE IS " << convert_choose(computer_choice) << "\n";
         cout << "       COMPUTER WINS \n";
         //system("color 4F"); //turn screen to red
         cout << "\a"; //make alert sound
