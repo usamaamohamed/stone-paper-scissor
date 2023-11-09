@@ -116,7 +116,7 @@ void game(int number_of_rounds, int& computer_choice, int player_choice)
 
 void start_restart_game(int &number_of_rounds, int &computer_choice, int &player_choice )
 {
-    string x = "";
+    string play_again = "";
     do
     {
         raed_rounds_number(number_of_rounds);
@@ -124,10 +124,10 @@ void start_restart_game(int &number_of_rounds, int &computer_choice, int &player
         do
         {
             cout << "GAME HAS ENDED ,DO YOU WANT TO PLAY AGAIN ? [ Y or N ]: \n";
-            cin >> x;
-        } while ( (x != "Y" ) && ( x != "y" ) && ( x != "N" ) && ( x != "n" ) );
-     
-    } while (x == "y" || x == "Y");
+            cin >> play_again;
+        } while ( (play_again != "Y" ) && ( play_again != "y" ) && ( play_again != "N" ) && ( play_again != "n" ) );
+        //system("color 0F"); //turn screen to black
+    } while (play_again == "y" || play_again == "Y");
 
     cout << "           GOOD BYE";
 }
